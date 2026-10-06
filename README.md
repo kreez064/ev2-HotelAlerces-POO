@@ -91,3 +91,11 @@ python main.py
    - Intento fallido de reservar una habitación ya ocupada (*HabitacionOcupadaError* capturada).
    - Intento fallido de realizar *check-in* sin el 50% de anticipo (*AnticipoInsuficienteError* capturada).
    - Registro del pago requerido y confirmación exitosa del *check-in*.
+
+---
+
+## 📝 Nota de Desarrollo e Implementación
+- Se implementaron y vincularon la totalidad de los modelos base (`Persona`, `Huesped`, `Habitacion`, `HabitacionIndividual`, `HabitacionDoble`, `HabitacionSuite`, `Excepciones`).
+- Se completaron las clases transaccionales (`Reserva`, `DetalleReserva`, `Consumo`, `Servicio`, `Pago`, `MedioPago`, `IndicadorExterno`).
+- Se definieron los roles y jerarquía de personal (`Empleado`, `Recepcionista`, `CamareraHousekeeping`).
+- El script de prueba [`main.py`](file:///C:/Users/13579/OneDrive/Documents/ev2-HotelAlerces-POO/main.py) se encuentra 100% operativo y finaliza su ejecución continua con éxito validando todas las reglas del sistema.

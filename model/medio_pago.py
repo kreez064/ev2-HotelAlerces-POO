@@ -4,5 +4,12 @@ class MedioPago:
         self._nombre = nombre
 
     @property
+    def id_medio(self):
+        return self._id_medio
+
+    @property
     def nombre(self):
         return self._nombre
+
+    def __str__(self):
+        return f"{self._nombre}"

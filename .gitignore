@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .vscode/
 .idea/
+hotel.db
+*.db
+.env

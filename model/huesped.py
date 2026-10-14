@@ -14,10 +14,23 @@ class Huesped(Persona):
 
     @documento.setter
     def documento(self, valor):
-        # Validación: El documento (RUT o Pasaporte) no puede estar vacío y debe tener un mínimo de caracteres
-        if not valor or len(str(valor).strip()) < 8:
-            raise ValueError("Error de validación: El documento o RUT debe tener al menos 8 caracteres válidos.")
-        self._documento = valor
+        """
+        Valida que el documento (RUT o Pasaporte) tenga formato válido, no esté vacío
+        y contenga al menos 8 caracteres. Lanza ValueError con un mensaje descriptivo si no es válido.
+        """
+        if valor is None:
+            raise ValueError("Error de validación: El documento (RUT o Pasaporte) no puede ser nulo.")
+
+        valor_limpio = str(valor).strip()
+        if not valor_limpio:
+            raise ValueError("Error de validación: El documento (RUT o Pasaporte) no puede estar vacío.")
+
+        if len(valor_limpio) < 8:
+            raise ValueError(
+                f"Error de validación: El documento o RUT '{valor_limpio}' debe tener al menos 8 caracteres válidos."
+            )
+
+        self._documento = valor_limpio
 
     def historial_reservas(self):
         return f"Consultando historial de reservas para el huésped {self.nombre}."
